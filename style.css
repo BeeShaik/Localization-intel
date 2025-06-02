@@ -1,0 +1,281 @@
+/* General Styling */
+body {
+  font-family: 'Orbitron', 'Roboto', Arial, sans-serif;
+  background: #f4f6f8;
+  margin: 0;
+  padding: 0;
+}
+
+.site-header {
+  display: flex;
+  align-items: center;
+  background: #000;
+  color: #fff;
+  padding: 20px;
+}
+
+.header-text h1 {
+  margin: 0 0 8px 0;
+  font-size: 2rem;
+}
+
+.timeline-container {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 0 10px;
+}
+
+.timeline {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 20px;
+  justify-content: flex-start;
+  overflow-x: auto;
+  padding-bottom: 20px;
+  scroll-behavior: smooth;
+}
+
+.timeline::-webkit-scrollbar {
+  height: 10px;
+}
+.timeline::-webkit-scrollbar-thumb {
+  background: #0071c5;
+  border-radius: 5px;
+}
+
+/* Milestone Cards */
+.milestone-card {
+  background: #e6f0fa; /* Softer blue inner background */
+  border-radius: 12px;
+  border: 2px solid #000;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  width: 220px;
+  min-width: 220px;
+  height: 340px;
+  padding: 24px 16px;
+  text-align: center;
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.milestone-card:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 0 20px rgba(0, 113, 197, 0.5);
+}
+
+.milestone-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover; /* Fill container, crop as needed */
+  margin-bottom: 16px;
+  border: 2px solid #000;
+  border-radius: 8px;
+  background: #fff;
+  display: block;
+  box-sizing: border-box;
+}
+
+.milestone-card h2 {
+  font-size: 1rem;
+  margin: 0 0 16px 0; /* Increased bottom margin for more space */
+  color: #0071c5;
+}
+
+.hidden-detail {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  color: #333;
+  font-size: 0.95rem;
+  margin: 0;
+  font-family: Arial, sans-serif; /* Simpler font for milestone details */
+}
+
+.milestone-card:hover .hidden-detail {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hero Banner */
+.hero {
+  background: radial-gradient(circle at top left, #0071c5, #001f3f);
+  color: #fff;
+  text-align: center;
+  padding: 140px 20px 120px 20px;
+  margin-bottom: 30px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(60deg, rgba(0,255,255,0.1), rgba(0,0,0,0.2));
+  animation: pulseBackground 6s linear infinite;
+  z-index: 0;
+}
+
+@keyframes pulseBackground {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.hero h1, .hero p, .hero-btn {
+  position: relative;
+  z-index: 1;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 18px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 28px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: Arial, sans-serif; /* Simpler font for about and hero paragraphs */
+}
+
+.hero-btn {
+  display: inline-block;
+  background: #fff;
+  color: #0071c5;
+  padding: 14px 36px;
+  border-radius: 24px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.hero-btn:hover {
+  background: #0071c5;
+  color: #fff;
+  border: 1px solid #fff;
+}
+
+/* Navigation */
+.nav-logo {
+  height: 48px;
+  width: auto;
+  border-radius: 6px;
+  object-fit: contain;
+  margin-right: 16px;
+}
+
+.nav-buttons {
+  margin-left: auto;
+  display: flex;
+  gap: 10px;
+}
+
+.nav-btn {
+  background: #0071c5;
+  color: #fff;
+  padding: 6px 18px;
+  border-radius: 16px;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  border: none;
+  transition: background 0.2s;
+  display: inline-block;
+}
+
+.nav-btn:hover {
+  background: #00bfff;
+  color: #000;
+}
+
+/* About Section */
+.about-banner {
+  background: #e3f2fd;
+  color: #222;
+  text-align: center;
+  padding: 32px 10px 28px 10px;
+  margin: 32px 0 0 0;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.about-banner h2 {
+  font-size: 2rem;
+  margin-bottom: 18px;
+  font-weight: 700;
+}
+
+.about-banner p {
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+  font-family: Arial, sans-serif; /* Simpler font for about and hero paragraphs */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .site-header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+  }
+
+  .nav-buttons {
+    margin-left: 0;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 8px;
+  }
+
+  .timeline {
+    flex-wrap: wrap;
+    justify-content: center;
+    overflow-x: visible;
+  }
+
+  .milestone-card {
+    width: 90%;
+    max-width: 300px;
+    margin-bottom: 20px;
+  }
+
+  .milestone-card img {
+    width: 100%;
+    height: 120px;
+  }
+
+  .hero {
+    padding: 100px 20px;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .about-banner h2 {
+    font-size: 1.6rem;
+  }
+
+  .about-banner p {
+    font-size: 1rem;
+  }
+}
